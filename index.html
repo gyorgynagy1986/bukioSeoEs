@@ -1,0 +1,1142 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Reservas de mesa online para restaurantes | Sistema de asztalfoglalás
+      online | Bukio
+    </title>
+    <meta
+      name="description"
+      content="Bukio es un sistema de reservas de mesa online para restaurantes. Recibe reservas 24/7, organiza mesas, reduce errores y deja que tus clientes hagan su asztalfoglalás online fácilmente con registro gratuito."
+    />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+    <meta name="author" content="Bukio" />
+    <meta
+      name="keywords"
+      content="reservas de mesa online, asztalfoglalás online, sistema de reservas para restaurantes, reservas para restaurante, software de reservas de mesa, booking de mesas, gestión de mesas restaurante, reserva de mesa online restaurante, Bukio"
+    />
+    <link rel="canonical" href="https://www.bukio.es" />
+
+    <link rel="alternate" hreflang="es" href="https://www.bukio.es" />
+    <link rel="alternate" hreflang="hu" href="https://www.bukio.es/" />
+    <link rel="alternate" hreflang="x-default" href="https://www.bukio.es/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:site_name" content="Bukio" />
+    <meta
+      property="og:title"
+      content="Reservas de mesa online para restaurantes | Bukio"
+    />
+    <meta
+      property="og:description"
+      content="Sistema de reservas de mesa online para restaurantes. Más reservas, mejor organización y registro gratuito con Bukio."
+    />
+    <meta property="og:url" content="https://www.bukio.es" />
+    <meta property="og:image" content="https://www.bukio.es/og-image.jpg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Reservas de mesa online para restaurantes | Bukio"
+    />
+    <meta
+      name="twitter:description"
+      content="Haz crecer tu restaurante con reservas de mesa online y una gestión más simple con Bukio."
+    />
+    <meta name="twitter:image" content="https://www.bukio.es/og-image.jpg" />
+
+    <style>
+      :root {
+        --bg: #0b1220;
+        --bg-soft: #111a2d;
+        --card: #ffffff;
+        --text: #0f172a;
+        --muted: #475569;
+        --line: #dbe4ee;
+        --brand: #2563eb;
+        --brand-dark: #1d4ed8;
+        --brand-soft: #dbeafe;
+        --success: #16a34a;
+        --white: #ffffff;
+        --shadow: 0 20px 45px rgba(15, 23, 42, 0.12);
+        --radius: 22px;
+        --max: 1180px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        font-family:
+          Inter,
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        color: var(--text);
+        background: #f8fafc;
+        line-height: 1.6;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .container {
+        width: min(100% - 32px, var(--max));
+        margin: 0 auto;
+      }
+
+      .topbar {
+        background: rgba(11, 18, 32, 0.92);
+        color: rgba(255, 255, 255, 0.88);
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .topbar-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        min-height: 74px;
+      }
+
+      .logo {
+        font-size: 1.4rem;
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        color: var(--white);
+      }
+
+      .nav {
+        display: flex;
+        gap: 18px;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+      .nav a {
+        color: rgba(255, 255, 255, 0.84);
+        font-weight: 600;
+        font-size: 0.96rem;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 14px 22px;
+        border-radius: 999px;
+        font-weight: 800;
+        transition: 0.2s ease;
+        border: 1px solid transparent;
+      }
+
+      .btn-primary {
+        background: var(--brand);
+        color: var(--white);
+        box-shadow: 0 10px 30px rgba(37, 99, 235, 0.32);
+      }
+
+      .btn-primary:hover {
+        background: var(--brand-dark);
+        transform: translateY(-1px);
+      }
+      .btn-secondary {
+        background: rgba(255, 255, 255, 0.08);
+        color: var(--white);
+        border-color: rgba(255, 255, 255, 0.12);
+      }
+
+      .hero {
+        background:
+          radial-gradient(
+            circle at top left,
+            rgba(37, 99, 235, 0.24),
+            transparent 38%
+          ),
+          radial-gradient(
+            circle at top right,
+            rgba(59, 130, 246, 0.16),
+            transparent 28%
+          ),
+          linear-gradient(180deg, #0b1220 0%, #10192c 100%);
+        color: var(--white);
+        padding: 72px 0 56px;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 34px;
+        align-items: center;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 14px;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 999px;
+        font-size: 0.9rem;
+        font-weight: 700;
+        margin-bottom: 18px;
+      }
+
+      h1,
+      h2,
+      h3 {
+        line-height: 1.12;
+        letter-spacing: -0.03em;
+        margin: 0 0 18px;
+      }
+      h1 {
+        font-size: clamp(2.2rem, 5vw, 4.6rem);
+        max-width: 12ch;
+      }
+      h2 {
+        font-size: clamp(1.8rem, 4vw, 3rem);
+      }
+      h3 {
+        font-size: 1.28rem;
+      }
+
+      .lead {
+        font-size: 1.12rem;
+        color: rgba(255, 255, 255, 0.82);
+        max-width: 64ch;
+        margin-bottom: 28px;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-bottom: 22px;
+      }
+
+      .hero-points {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px 18px;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        color: rgba(255, 255, 255, 0.84);
+        font-weight: 600;
+      }
+
+      .hero-points li::before {
+        content: "✓";
+        color: #86efac;
+        font-weight: 900;
+        margin-right: 8px;
+      }
+
+      .hero-card {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: var(--radius);
+        padding: 28px;
+        box-shadow: var(--shadow);
+      }
+
+      .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        margin-top: 18px;
+      }
+
+      .stat {
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 18px;
+        padding: 18px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .stat strong {
+        display: block;
+        font-size: 1.7rem;
+        margin-bottom: 6px;
+      }
+
+      section {
+        padding: 78px 0;
+      }
+
+      .section-head {
+        max-width: 760px;
+        margin-bottom: 34px;
+      }
+
+      .section-head p,
+      .muted {
+        color: var(--muted);
+      }
+
+      .grid-3,
+      .grid-4,
+      .pricing-grid {
+        display: grid;
+        gap: 20px;
+      }
+      .grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .grid-4 {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      .pricing-grid {
+        grid-template-columns: repeat(3, 1fr);
+        align-items: stretch;
+      }
+
+      .card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 26px;
+        box-shadow: var(--shadow);
+      }
+
+      .pricing-card {
+        position: relative;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        padding: 30px;
+        box-shadow: var(--shadow);
+        display: flex;
+        flex-direction: column;
+        min-height: 100%;
+      }
+
+      .pricing-card.featured {
+        border: 2px solid var(--brand);
+        transform: translateY(-4px);
+      }
+
+      .badge-featured {
+        position: absolute;
+        top: 18px;
+        right: 18px;
+        background: #fef3c7;
+        color: #92400e;
+        padding: 8px 12px;
+        border-radius: 999px;
+        font-size: 0.82rem;
+        font-weight: 800;
+      }
+
+      .plan-name {
+        font-size: 1.6rem;
+        font-weight: 800;
+        margin: 0 0 10px;
+      }
+
+      .price {
+        display: flex;
+        align-items: baseline;
+        gap: 6px;
+        margin-bottom: 18px;
+      }
+
+      .price strong {
+        font-size: 2.4rem;
+        line-height: 1;
+        letter-spacing: -0.04em;
+      }
+
+      .price span {
+        color: var(--muted);
+        font-weight: 700;
+      }
+
+      .plan-note {
+        color: var(--muted);
+        margin-bottom: 18px;
+      }
+
+      .plan-features {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 24px;
+        display: grid;
+        gap: 12px;
+        color: var(--muted);
+      }
+
+      .plan-features li::before {
+        content: "✅";
+        margin-right: 10px;
+      }
+
+      .pricing-card .btn {
+        margin-top: auto;
+        width: 100%;
+      }
+
+      .card p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .pill {
+        display: inline-block;
+        background: var(--brand-soft);
+        color: var(--brand-dark);
+        padding: 8px 12px;
+        border-radius: 999px;
+        font-size: 0.85rem;
+        font-weight: 800;
+        margin-bottom: 14px;
+      }
+
+      .alt {
+        background: linear-gradient(180deg, #eff6ff 0%, #f8fafc 100%);
+      }
+
+      .split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 22px;
+        align-items: start;
+      }
+
+      .list {
+        display: grid;
+        gap: 14px;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+
+      .list li {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 16px 18px;
+        color: var(--muted);
+        box-shadow: 0 10px 25px rgba(15, 23, 42, 0.05);
+      }
+
+      .list strong {
+        color: var(--text);
+      }
+
+      .cta-box {
+        background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+        color: #fff;
+        border-radius: 30px;
+        padding: 40px;
+        box-shadow: var(--shadow);
+      }
+
+      .cta-box p {
+        color: rgba(255, 255, 255, 0.84);
+      }
+
+      .faq {
+        display: grid;
+        gap: 16px;
+      }
+
+      details {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 18px 20px;
+        box-shadow: 0 10px 25px rgba(15, 23, 42, 0.05);
+      }
+
+      summary {
+        cursor: pointer;
+        font-weight: 800;
+        list-style: none;
+      }
+
+      summary::-webkit-details-marker {
+        display: none;
+      }
+      details p {
+        color: var(--muted);
+        margin: 12px 0 0;
+      }
+
+      .seo-copy {
+        columns: 2;
+        column-gap: 28px;
+      }
+
+      .seo-copy p {
+        margin-top: 0;
+        color: var(--muted);
+      }
+
+      footer {
+        background: #0b1220;
+        color: rgba(255, 255, 255, 0.78);
+        padding: 30px 0;
+      }
+
+      .footer-inner {
+        display: flex;
+        gap: 18px;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+
+      .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      @media (max-width: 980px) {
+        .hero-grid,
+        .split,
+        .grid-3,
+        .grid-4,
+        .pricing-grid {
+          grid-template-columns: 1fr;
+        }
+        .seo-copy {
+          columns: 1;
+        }
+        .nav {
+          display: none;
+        }
+      }
+    </style>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Bukio",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "url": "https://www.bukio.es",
+        "downloadUrl": "https://www.bukio.hu/auth/register",
+        "description": "Sistema de reservas de mesa online para restaurantes y negocios de hostelería.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "EUR",
+          "availability": "https://schema.org/InStock"
+        },
+        "provider": {
+          "@type": "Organization",
+          "name": "Bukio",
+          "url": "https://www.bukio.es/"
+        }
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Qué es Bukio?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Bukio es un software de reservas online que ayuda a restaurantes, salones, clínicas y negocios de servicios a aceptar reservas y citas 24/7 desde internet."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Para qué negocios sirve un sistema de reservas online?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Un sistema de reservas online sirve para restaurantes, barberías, peluquerías, salones de belleza, clínicas, consultorías, gimnasios y cualquier empresa que gestione citas o reservas."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Puedo probar Bukio gratis?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sí. Puedes crear una cuenta gratuita y empezar a usar Bukio desde la página oficial de registro."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <a class="logo" href="#inicio" aria-label="Bukio inicio">Bukio</a>
+        <nav class="nav" aria-label="Navegación principal">
+          <a href="#beneficios">Beneficios</a>
+          <a href="#sectores">Sectores</a>
+          <a href="#funciones">Funciones</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+        <a class="btn btn-primary" href="https://www.bukio.hu/auth/register"
+          >Regístrate gratis</a
+        >
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio">
+        <div class="container hero-grid">
+          <div>
+            <div class="eyebrow">
+              Sistema de reservas de mesa online para restaurantes
+            </div>
+            <h1>
+              Reservas de mesa online para restaurantes que quieren más clientes
+            </h1>
+            <p class="lead">
+              Bukio es un
+              <strong>sistema de reservas de mesa online</strong> pensado para
+              restaurantes que quieren aceptar
+              <strong>asztalfoglalás online</strong>, organizar mejor sus mesas
+              y permitir que sus clientes reserven en cualquier momento. Ideal
+              para negocios de hostelería que buscan más reservas directas y
+              menos gestión manual.
+            </p>
+            <div class="hero-actions">
+              <a
+                class="btn btn-primary"
+                href="https://www.bukio.hu/auth/register"
+                >Crear cuenta gratis</a
+              >
+              <a class="btn btn-secondary" href="#beneficios"
+                >Ver cómo funciona</a
+              >
+            </div>
+            <ul class="hero-points" aria-label="Ventajas principales">
+              <li>Reservas de mesa online 24/7</li>
+              <li>Menos cancelaciones y ausencias</li>
+              <li>Más reservas directas sin llamadas</li>
+              <li>Configuración rápida</li>
+            </ul>
+          </div>
+
+          <aside class="hero-card" aria-label="Resumen de valor de Bukio">
+           
+            <span class="pill">Optimizado para conversión</span>
+            <h2>
+              Una plataforma de reservas de mesa que trabaja por tu restaurante
+            </h2>
+            <p class="muted">
+              Reduce la carga administrativa, organiza mesas con más claridad y
+              ofrece un proceso de reserva de mesa online rápido y profesional
+              desde cualquier dispositivo.
+            </p>
+            <div class="stat-grid">
+              <div class="stat">
+                <strong>24/7</strong>
+                <span>Disponibilidad para aceptar reservas</span>
+              </div>
+              <div class="stat">
+                <strong>1 panel</strong>
+                <span>Gestión centralizada de mesas y reservas</span>
+              </div>
+              <div class="stat">
+                <strong>Más reservas</strong>
+                <span
+                  >Mejor experiencia para convertir visitas en mesas
+                  ocupadas</span
+                >
+              </div>
+              <div class="stat">
+                <strong>Gratis</strong>
+                <span>Acceso inicial desde el registro oficial</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="beneficios">
+        <div class="container">
+          <div class="section-head">
+            <span class="pill">Ventajas para tu restaurante</span>
+            <h2>
+              Por qué elegir un sistema de reservas de mesa online para tu
+              restaurante
+            </h2>
+            <p>
+              Cuando un restaurante sigue gestionando reservas por teléfono,
+              WhatsApp o mensajes dispersos, pierde tiempo, mesas y
+              oportunidades de venta. Un
+              <strong>sistema de reservas de mesa online</strong> ayuda a
+              centralizar el proceso, llenar mejor el local y ofrecer una
+              experiencia más cómoda al cliente.
+            </p>
+          </div>
+
+          <div class="grid-3">
+            <article class="card">
+             
+             
+              <h3>Más reservas de mesa sin fricción</h3>
+              <p>
+                Los clientes pueden hacer su reserva de mesa online cuando
+                quieren, sin depender del horario del restaurante. Eso genera
+                más conversiones y menos reservas perdidas.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Menos llamadas y menos caos</h3>
+              <p>
+                Con una herramienta de reservas de mesa, tu equipo dedica menos
+                tiempo a responder llamadas, apuntar reservas a mano y
+                reorganizar mesas durante el servicio.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Mejor experiencia para el comensal</h3>
+              <p>
+                Un proceso claro, rápido y móvil mejora la percepción del
+                restaurante y facilita que el cliente reserve mesa en segundos
+                desde su móvil.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="alt" id="sectores">
+        <div class="container">
+          <div class="section-head">
+            <span class="pill">Tipos de negocio</span>
+            <h2>
+              Software de reservas de mesa online para restaurantes y hostelería
+            </h2>
+            <p>
+              Esta landing está enfocada de forma específica a restaurantes,
+              gastrobares, cafeterías, bistrós y negocios de hostelería que
+              necesitan un
+              <strong>software de reservas de mesa online</strong> y quieren
+              posicionarse para búsquedas comerciales en español.
+            </p>
+          </div>
+
+          <div class="grid-4">
+            <article class="card">
+              <h3>Restaurantes</h3>
+              <p>
+                Gestiona reservas de mesa, mejora la ocupación y organiza mejor
+                cada servicio con un sistema centralizado.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Gastrobares</h3>
+              <p>
+                Perfecto para locales con alta rotación de mesas y necesidad de
+                reservas rápidas y bien organizadas.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Cafeterías y bistrós</h3>
+              <p>
+                Facilita la reserva anticipada de mesa y mejora la experiencia
+                del cliente antes de llegar al local.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Hostelería moderna</h3>
+              <p>
+                Una solución útil para negocios gastronómicos que quieren
+                digitalizar su asztalfoglalás online.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="funciones">
+        <div class="container">
+          <div class="section-head">
+            <span class="pill">Cómo te ayuda Bukio</span>
+            <h2>Qué debe tener un buen sistema de reservas de mesa online</h2>
+            <p>
+              No todos los sistemas responden igual a las necesidades de un
+              restaurante. Una solución eficaz debe ayudarte a captar reservas,
+              organizar mesas y reducir fricciones en cada servicio.
+            </p>
+          </div>
+
+          <div class="split">
+            <ul class="list">
+              <li>
+                <strong>Reservas de mesa online 24/7:</strong> tus clientes
+                pueden reservar mesa en cualquier momento desde cualquier
+                dispositivo.
+              </li>
+              <li>
+                <strong>Panel centralizado:</strong> controla mesas, reservas y
+                disponibilidad desde un solo lugar.
+              </li>
+              <li>
+                <strong>Flujo más claro:</strong> reduce errores operativos y
+                mejora la asignación de mesas.
+              </li>
+              <li>
+                <strong>Experiencia digital:</strong> transmite confianza con
+                una reserva de mesa online rápida y profesional.
+              </li>
+            </ul>
+            <ul class="list">
+              <li>
+                <strong>Escalabilidad:</strong> apto para restaurantes pequeños
+                y locales que quieren crecer con más reservas directas.
+              </li>
+              <li>
+                <strong>Menos dependencia del teléfono:</strong> automatizar la
+                reserva de mesa ahorra tiempo a tu equipo.
+              </li>
+              <li>
+                <strong>Más visibilidad comercial:</strong> una página SEO en
+                español puede atraer búsquedas como reservas de mesa online o
+                sistema de reservas para restaurantes.
+              </li>
+              <li>
+                <strong>Registro gratuito:</strong> empieza desde la página
+                oficial y valida el sistema en tu negocio.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="alt" id="caracteristicas">
+        <div class="container">
+          <div class="section-head">
+            <span class="pill">Funciones destacadas</span>
+            <h2>
+              Todo lo que un restaurante necesita para gestionar reservas de
+              mesa online
+            </h2>
+            <p>
+              Bukio no solo ayuda a recibir reservas. También ofrece
+              herramientas para organizar el servicio, mejorar la ocupación y
+              dar más control al equipo del restaurante.
+            </p>
+          </div>
+
+          <div class="grid-3">
+            <article class="card">
+              
+              <h3>Mapa de mesas visual</h3>
+              <p>
+                Organiza la distribución del restaurante con una vista clara de
+                las mesas y del estado de cada reserva para trabajar con más
+                precisión durante el servicio.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Reservas online 24/7</h3>
+              <p>
+                Tus clientes pueden reservar mesa en cualquier momento, incluso
+                fuera del horario de atención, sin depender del teléfono.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Todas las reservas en un solo lugar</h3>
+              <p>
+                Centraliza reservas recibidas online, por teléfono o por el
+                equipo del restaurante para evitar errores y tener una visión
+                completa.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Emails y notificaciones automáticas</h3>
+              <p>
+                Envía confirmaciones, recordatorios y avisos de forma automática
+                para reducir olvidos y mantener informados a los clientes.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Analítica y control</h3>
+              <p>
+                Consulta métricas y reportes para entender mejor la ocupación,
+                el rendimiento del servicio y la evolución de las reservas.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Reglas, integraciones y escalabilidad</h3>
+              <p>
+                Configura reglas según las necesidades de tu restaurante y
+                amplía la solución con integraciones, API y funciones avanzadas
+                cuando tu negocio lo necesite.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="alt">
+        <div class="container">
+          <div class="cta-box">
+            <span class="pill">Empieza gratis</span>
+            <h2>Prueba Bukio y empieza a recibir reservas de mesa online</h2>
+            <p>
+              Si buscas un
+              <strong>sistema de reservas de mesa online en español</strong>
+              para atraer más clientes a tu restaurante y organizar mejor tus
+              servicios, Bukio te permite crear una base digital sólida y
+              orientada a conversión.
+            </p>
+            <a class="btn btn-primary" href="https://www.bukio.hu/auth/register"
+              >Abrir cuenta gratuita</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="section-head">
+            <span class="pill">Para restaurantes</span>
+            <h2>Una solución moderna para gestionar reservas de mesa online</h2>
+            <p>
+              Bukio ayuda a los restaurantes a convertir más visitas en reservas
+              reales con una experiencia rápida, clara y pensada para el cliente
+              moderno.
+            </p>
+          </div>
+          <div class="seo-copy">
+            <p>
+              <strong>Bukio</strong> permite a los restaurantes gestionar sus
+              <strong>reservas de mesa online</strong> de una forma más cómoda,
+              ordenada y profesional. En lugar de depender de llamadas, mensajes
+              dispersos o anotaciones manuales, el equipo puede centralizar las
+              reservas y ofrecer al cliente una experiencia mucho más ágil desde
+              el primer momento.
+            </p>
+            <p>
+              Para muchos restaurantes, contar con un sistema digital de
+              reservas ya no es una mejora opcional, sino una parte esencial de
+              la operación. Facilita la organización del servicio, ayuda a
+              aprovechar mejor la capacidad del local y transmite una imagen más
+              actual a cada persona que quiere reservar.
+            </p>
+            <p>
+              Además de mejorar la gestión interna, una propuesta clara como la
+              de Bukio encaja con lo que hoy buscan muchos negocios de
+              hostelería: una herramienta sencilla para aceptar reservas de mesa
+              online, reducir fricción y aumentar las reservas directas sin
+              complicar el día a día del personal.
+            </p>
+            <p>
+              Ya sea un restaurante urbano, una cafetería con alta rotación o un
+              gastrobar que quiere profesionalizar su operativa, Bukio ofrece
+              una base sólida para gestionar mejor cada servicio y facilitar que
+              más clientes reserven mesa online.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="alt" id="faq">
+        <div class="container">
+          <div class="section-head">
+            <span class="pill">Preguntas habituales</span>
+            <h2>
+              Dudas comunes sobre reservas de mesa online para restaurantes
+            </h2>
+            <p>
+              Estas preguntas ayudan a resolver objeciones y también refuerzan
+              el SEO con consultas frecuentes de usuarios en fase de
+              comparación.
+            </p>
+          </div>
+
+          <div class="faq">
+            <details open>
+              <summary>¿Qué es un sistema de reservas de mesa online?</summary>
+              <p>
+                Es una herramienta digital que permite a los clientes reservar
+                una mesa por internet sin que el restaurante tenga que gestionar
+                cada solicitud manualmente.
+              </p>
+            </details>
+            <details>
+              <summary>¿Qué tipo de restaurante puede usar Bukio?</summary>
+              <p>
+                Bukio puede ser útil para restaurantes, gastrobares, cafeterías,
+                bistrós y otros negocios de hostelería que trabajan con reservas
+                de mesa.
+              </p>
+            </details>
+            <details>
+              <summary>
+                ¿Por qué una landing SEO para reservas de mesa online puede
+                ayudar?
+              </summary>
+              <p>
+                Porque te permite posicionarte para búsquedas como reservas de
+                mesa online, sistema de reservas para restaurantes, reserva de
+                mesa online restaurante o asztalfoglalás online, atrayendo
+                tráfico con intención comercial.
+              </p>
+            </details>
+            <details>
+              <summary>¿Cómo empiezo gratis?</summary>
+              <p>
+                Puedes crear tu cuenta directamente desde la página oficial de
+                registro de Bukio y empezar a probar la plataforma.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section id="precios">
+        <div class="container">
+          <div class="section-head">
+            <span class="pill">Precios</span>
+            <h2>
+              Precios transparentes para restaurantes de todos los tamaños
+            </h2>
+            <p>
+              Elige el plan que mejor se adapta al tamaño de tu restaurante y a
+              la forma en que gestionas tus reservas de mesa online.
+            </p>
+          </div>
+
+          <div class="pricing-grid">
+            <article class="pricing-card">
+              <h3 class="plan-name">Starter</h3>
+              <div class="price">
+                <strong>25 €</strong>
+                <span>/ mes</span>
+              </div>
+              <p class="plan-note">
+                Ideal para restaurantes pequeños que quieren empezar con un
+                sistema claro, profesional y con un precio accesible.
+              </p>
+              <ul class="plan-features">
+                <li>Gestión de hasta 50 mesas</li>
+                <li>Mapa de distribución de mesas</li>
+                <li>Sistema básico de reservas</li>
+                <li>Plantillas de email editables</li>
+                <li>Notificaciones por email</li>
+                <li>Analítica básica</li>
+                <li>Soporte telefónico</li>
+              </ul>
+              <a
+                class="btn btn-primary"
+                href="https://www.bukio.hu/auth/register"
+                >Prueba gratis</a
+              >
+            </article>
+
+            <article class="pricing-card featured">
+              <div class="badge-featured">🔥 Más popular</div>
+              <h3 class="plan-name">Professional</h3>
+              <div class="price">
+                <strong>49 €</strong>
+                <span>/ mes</span>
+              </div>
+              <p class="plan-note">
+                Pensado para restaurantes con mayor volumen de reservas y
+                necesidades de gestión más avanzadas.
+              </p>
+              <ul class="plan-features">
+                <li>Mesas ilimitadas</li>
+                <li>Gestión de múltiples áreas</li>
+                <li>Notificaciones en navegador</li>
+                <li>3 formularios de reserva</li>
+                <li>Analítica detallada</li>
+                <li>Automatización de emails</li>
+                <li>Reglas personalizadas</li>
+                <li>Soporte prioritario</li>
+              </ul>
+              <a
+                class="btn btn-primary"
+                href="https://www.bukio.hu/auth/register"
+                >Prueba gratis</a
+              >
+            </article>
+
+            <article class="pricing-card">
+              <h3 class="plan-name">Enterprise</h3>
+              <div class="price">
+                <strong>Oferta personalizada</strong>
+              </div>
+              <p class="plan-note">
+                Para restaurantes o grupos con necesidades específicas,
+                integraciones y desarrollo a medida.
+              </p>
+              <ul class="plan-features">
+                <li>Notificaciones por SMS</li>
+                <li>Integraciones personalizadas</li>
+                <li>Account manager dedicado</li>
+                <li>Garantía SLA</li>
+                <li>Acceso a REST API</li>
+                <li>Desarrollo personalizado</li>
+              </ul>
+              <a
+                class="btn btn-primary"
+                href="https://www.bukio.hu/auth/register"
+                >Solicitar oferta</a
+              >
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-inner">
+        <div>
+          <strong>Bukio</strong><br />
+          Sistema de reservas de mesa online para restaurantes modernos.
+        </div>
+        <div class="footer-links">
+          <a href="#inicio">Inicio</a>
+          <a href="#beneficios">Beneficios</a>
+          <a href="#faq">FAQ</a>
+          <a href="https://www.bukio.hu/auth/register">Registro gratuito</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
